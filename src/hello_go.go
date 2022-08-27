@@ -48,6 +48,16 @@ func main() {
 	// If no error was returned, print the returned message
 	// to the console.
 	fmt.Println(messages)
+
+	welcomeMsg := "the world is beatiful"
+	optMsgs := greetings.HelloMsgToOptionalPersons(welcomeMsg, "zhangsan", "lisi", "wangwu")
+	if optMsgs == nil {
+		fmt.Println("Hello ", welcomeMsg)
+	} else {
+		for person, msg := range optMsgs {
+			fmt.Printf("%v -> %v\n", person, msg)
+		}
+	}
 }
 
 // dlv-dap installing guide
